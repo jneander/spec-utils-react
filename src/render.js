@@ -9,11 +9,11 @@ export default async function render(element, options = {}) {
   const {$container, ...rest} = options
   const {container, ...component} = rtlRender(wrappedElement, {
     container: $container,
-    ...rest
+    ...rest,
   })
 
   return {
     $container: container,
-    ...component
+    ...component,
   }
 }
