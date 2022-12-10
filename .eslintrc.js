@@ -29,7 +29,7 @@ module.exports = {
         node: true,
       },
 
-      files: ['./babel.config.js', './.eslintrc.js'],
+      files: ['./.eslintrc.js'],
     },
 
     {
