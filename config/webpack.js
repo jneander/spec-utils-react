@@ -14,7 +14,7 @@ module.exports = {
     rules: [
       {
         exclude: /node_modules/,
-        test: /\.js$/,
+        test: /\.(js|ts|tsx)$/,
         use: [
           {
             loader: 'babel-loader',
@@ -47,6 +47,7 @@ module.exports = {
                   },
                 ],
 
+                '@babel/preset-typescript',
                 '@babel/react',
               ],
             },
@@ -76,6 +77,7 @@ module.exports = {
   ],
 
   resolve: {
+    extensions: ['.ts', '.tsx', '.js'],
     modules: [srcPath, 'node_modules'],
   },
 

@@ -1,5 +1,4 @@
-import React from 'react'
-import sinon from 'sinon'
+import sinon, {SinonStub} from 'sinon'
 
 import {createContainer} from '@jneander/spec-utils-dom'
 
@@ -7,14 +6,17 @@ import {render} from '../render'
 import {ErrorBoundary} from './error-boundary'
 
 describe('Spec Utils React > Components > ErrorBoundary', () => {
-  let $container
-  let component
-  let originalOnError
+  let $container: HTMLElement
+  let component: Awaited<ReturnType<typeof render>>
+  let originalOnError: typeof window.onerror
+  let consoleErrorStub: SinonStub
 
   beforeEach(() => {
-    sinon.stub(console, 'error')
+    consoleErrorStub = sinon.stub(console, 'error')
     originalOnError = window.onerror
-    window.onerror = () => {}
+    window.onerror = () => {
+      // noop
+    }
 
     $container = createContainer()
   })
@@ -24,18 +26,18 @@ describe('Spec Utils React > Components > ErrorBoundary', () => {
     $container.remove()
 
     window.onerror = originalOnError
-    console.error.restore()
+    consoleErrorStub.restore()
   })
 
   function OkayComponent() {
     return <span>Okay</span>
   }
 
-  function BrokenComponent() {
+  const BrokenComponent = () => {
     throw new Error('BROKEN')
   }
 
-  function SpecComponent({broken}) {
+  function SpecComponent({broken}: {broken?: boolean}) {
     return <ErrorBoundary>{broken ? <BrokenComponent /> : <OkayComponent />}</ErrorBoundary>
   }
 
