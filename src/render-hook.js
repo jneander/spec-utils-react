@@ -1,6 +1,6 @@
 import {renderHook as tlRenderHook} from '@testing-library/react-hooks/dom'
 
-export default function renderHook(callback, options) {
+export function renderHook(callback, options) {
   let error = null
 
   const component = tlRenderHook(() => {

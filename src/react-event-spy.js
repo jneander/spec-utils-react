@@ -1,6 +1,6 @@
 import sinon from 'sinon'
 
-export default function reactEventSpy() {
+export function reactEventSpy() {
   return sinon.stub().callsFake(event => {
     event.persist()
   })
