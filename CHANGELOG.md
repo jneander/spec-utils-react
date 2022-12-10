@@ -7,6 +7,13 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/jneander/spec-utils-react/compare/v2.0.0...v2.0.1) (2022-12-10)
+
+### Bug Fixes
+
+- make render-hook options optional
+  ([7cb3eb4](https://github.com/jneander/spec-utils-react/commit/7cb3eb4b1d946d3c57055e016c7d96f662725e70))
+
 ## [2.0.0](https://github.com/jneander/spec-utils-react/compare/v1.0.2...v2.0.0) (2022-12-10)
 
 ### ⚠ BREAKING CHANGES
