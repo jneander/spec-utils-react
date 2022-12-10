@@ -3,8 +3,8 @@ import sinon from 'sinon'
 
 import {createContainer} from '@jneander/spec-utils-dom'
 
-import render from '../../render'
-import ErrorBoundary from '../error-boundary'
+import render from '../render'
+import ErrorBoundary from './error-boundary'
 
 describe('Spec Utils React > Components > ErrorBoundary', () => {
   let $container
