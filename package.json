@@ -1,6 +1,6 @@
 {
   "name": "@jneander/spec-utils-react",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Spec utilities for React interfaces",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
