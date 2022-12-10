@@ -2,7 +2,7 @@ import {renderHook as tlRenderHook} from '@testing-library/react-hooks/dom'
 
 export function renderHook<T = unknown>(
   callbackFn: () => T,
-  options: Parameters<typeof tlRenderHook>[1],
+  options?: Parameters<typeof tlRenderHook>[1],
 ) {
   let error = null
 
